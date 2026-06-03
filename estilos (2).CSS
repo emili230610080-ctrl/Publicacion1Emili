@@ -1,0 +1,229 @@
+/* =======================================================
+   FORMATO GENERAL Y MODELO DE CAJA
+   ======================================================= */
+* {
+    box-sizing: border-box; /* Controla el modelo de caja para que el padding no altere las dimensiones estructurales */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Fondo general: Tu fotografía en el museo (6.jpg) con un filtro oscuro para legibilidad impecable */
+    background-image: linear-gradient(rgba(0,0,0,0.88), rgba(0,0,0,0.88)), url('6.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    line-height: 1.6;
+}
+
+/* =======================================================
+   1) HEADER (Imagen de fondo: 8.jpg - Marte en el espacio)
+   ======================================================= */
+header {
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url('8.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 80px 20px;
+    text-align: center;
+    border-bottom: 5px solid #e67e22; /* Línea de color naranja representativo de Marte */
+}
+
+header h1 {
+    font-size: 2.8rem;
+    margin: 0;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+    letter-spacing: 2px;
+}
+
+header .lema {
+    font-size: 1.2rem;
+    color: #e67e22;
+    font-style: italic;
+    margin-top: 12px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* =======================================================
+   2) NAV (Imagen de fondo: 10.jpg - Space Exploring)
+   Cumple el Punto 6 de la rúbrica: Enlaces estilizados
+   ======================================================= */
+nav {
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('10.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 15px;
+    text-align: center;
+    border-bottom: 2px solid #222;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    margin: 0 15px;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #e67e22; /* Efecto interactivo al pasar el mouse por encima */
+    text-shadow: 0 0 8px rgba(230, 126, 34, 0.6);
+}
+
+/* =======================================================
+   CONTENEDOR ESTRUCTURAL (MODELO FLEXBOX)
+   ======================================================= */
+.contenedor-principal {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    gap: 25px;
+}
+
+/* =======================================================
+   3) SECTION (Imagen de fondo: 11.jpg - Rover en superficie)
+   ======================================================= */
+section {
+    background-image: linear-gradient(rgba(15,15,15,0.9), rgba(15,15,15,0.9)), url('11.jpg');
+    background-size: cover;
+    background-position: center;
+    flex: 2; /* El bloque de la sección toma mayor proporción en pantallas grandes */
+    padding: 35px;
+    border-radius: 15px;
+    border: 1px solid rgba(230, 126, 34, 0.3);
+}
+
+section h2 {
+    color: #e67e22;
+    font-size: 2.1rem;
+    margin-top: 0;
+    border-bottom: 1px solid rgba(230, 126, 34, 0.3);
+    padding-bottom: 10px;
+}
+
+section h3 {
+    color: #f1c40f;
+    font-size: 1.4rem;
+    margin-top: 25px;
+}
+
+/* =======================================================
+   4) ASIDE (Imagen de fondo: 7.jpg - Edificio NASA)
+   ======================================================= */
+aside {
+    background-image: linear-gradient(rgba(20,15,10,0.93), rgba(20,15,10,0.93)), url('7.jpg');
+    background-size: cover;
+    background-position: center;
+    flex: 1; /* El bloque lateral toma una parte del tamaño disponible */
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    height: fit-content;
+}
+
+aside h3 {
+    color: #e67e22;
+    font-size: 1.5rem;
+    margin-top: 0;
+}
+
+aside hr {
+    border: 0;
+    height: 1px;
+    background: rgba(230, 126, 34, 0.4);
+    margin: 20px 0;
+}
+
+/* =======================================================
+   5) FOOTER (Imagen de fondo: 5.jpg - Logo NASA)
+   ======================================================= */
+footer {
+    background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)), url('5.jpg');
+    background-size: contain; /* Ajusta el logo para prevenir deformaciones o recortes abruptos */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #050505;
+    padding: 45px 20px;
+    text-align: center;
+    margin-top: 30px;
+    border-top: 4px solid #e67e22;
+}
+
+footer p {
+    margin: 6px 0;
+}
+
+/* =======================================================
+   ELEMENTOS INTERNOS (TABLAS, LISTAS E IMÁGENES INTEGRADAS)
+   ======================================================= */
+/* Tablas de Datos */
+.tabla-datos {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.tabla-datos th {
+    background-color: #e67e22;
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+.tabla-datos th, .tabla-datos td {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 12px;
+    text-align: left;
+}
+
+.tabla-datos tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Lista de Hosting */
+.lista-hosting {
+    padding-left: 20px;
+    margin: 15px 0;
+}
+
+.lista-hosting li {
+    margin-bottom: 8px;
+}
+
+/* Estilos de las Imágenes Internas */
+.img-animada { 
+    width: 100%; 
+    height: auto;
+    border-radius: 12px; 
+    box-shadow: 0 0 25px rgba(230, 126, 34, 0.4); 
+    margin-top: 25px;
+}
+
+.img-diagrama {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 20px 0;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.img-lateral { 
+    width: 100%; 
+    height: auto;
+    border-radius: 8px; 
+    margin-top: 15px; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+}
+
+/* Responsividad para Dispositivos Móviles y Tablets */
+@media (max-width: 768px) {
+    .contenedor-principal {
+        flex-direction: column; /* Alinea los bloques de manera vertical si el espacio es reducido */
+    }
+}
