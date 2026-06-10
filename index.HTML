@@ -2,103 +2,290 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="author" content="Emili Vargas Garcia">
-    <meta name="keywords" content="Marte, Misión 2026, NASA, HTML5, CSS3, MiCOBAQ, Hosting, Diseño Web">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Misión Marte 2026 - Emili Vargas Garcia</title>
-    <link rel="stylesheet" href="emili.css">
+    <title>Misión a Marte: La Nueva Frontera</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            color: #ffffff;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #0d0d0d;
+            line-height: 1.6;
+        }
+
+        header {
+            background-image: url('8.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 80px 20px;
+            text-align: center;
+            border-bottom: 5px solid #e67e22;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            color: #ffffff;
+            text-shadow: 3px 3px 6px #000000;
+            margin: 0;
+        }
+
+        header .lema {
+            font-size: 1.4rem;
+            color: #f1c40f;
+            font-style: italic;
+            margin-top: 10px;
+            text-shadow: 1px 1px 3px #000000;
+        }
+
+        nav {
+            background-image: url('10.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 15px;
+            text-align: center;
+            border-bottom: 2px solid #222;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 20px;
+            margin: 5px 10px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 4px;
+            display: inline-block;
+            transition: background 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #e67e22;
+            color: #000;
+        }
+
+        .contenedor-principal {
+            display: flex;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+            gap: 20px;
+        }
+
+        section {
+            background-image: url('11.jpg');
+            background-size: cover;
+            background-position: center;
+            flex: 2;
+            padding: 30px;
+            border-radius: 8px;
+            background-color: rgba(20, 20, 20, 0.88);
+            background-blend-mode: overlay;
+        }
+
+        section h2 {
+            color: #e67e22;
+            font-size: 2.2rem;
+            border-bottom: 2px solid #e67e22;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        section h3 {
+            color: #f1c40f;
+            font-size: 1.5rem;
+            margin-top: 25px;
+        }
+
+        aside {
+            background-image: url('7.jpg');
+            background-size: cover;
+            background-position: center;
+            flex: 1;
+            padding: 30px;
+            border-radius: 8px;
+            background-color: rgba(35, 25, 20, 0.92);
+            background-blend-mode: overlay;
+            height: fit-content;
+        }
+
+        aside h3 {
+            color: #e67e22;
+            margin-top: 0;
+            font-size: 1.6rem;
+            border-bottom: 1px solid rgba(230, 126, 34, 0.5);
+            padding-bottom: 5px;
+        }
+
+        aside h4 {
+            color: #f1c40f;
+            margin-bottom: 5px;
+        }
+
+        footer {
+            background-image: url('5.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 40px;
+            border-top: 4px solid #e67e22;
+            background-color: rgba(0, 0, 0, 0.85);
+            background-blend-mode: overlay;
+        }
+
+        .tabla-datos {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .tabla-datos th, .tabla-datos td {
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 12px;
+            text-align: left;
+        }
+
+        .tabla-datos th {
+            background-color: #e67e22;
+            color: #fff;
+        }
+
+        .tabla-datos tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .img-contenido {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 6px;
+            margin: 20px auto;
+            display: block;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .sub-lista {
+            padding-left: 20px;
+            margin: 5px 0;
+        }
+
+        @media (max-width: 768px) {
+            .contenedor-principal {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <header id="encabezado-mision">
+    <header>
         <h1>Misión a Marte: La Nueva Frontera</h1>
-        <p class="lema">"Explorando hoy el hogar de la humanidad mañana"</p>
+        <p class="lema">Explorando el siguiente paso de la humanidad</p>
     </header>
 
-    <nav id="navegacion-principal">
-        <a href="#seccion-intro">INICIO</a>
-        <a href="#objetivos-mision">OBJETIVOS</a>
-        <a href="#investigacion-hosting">HOSTING GRATUITO</a>
-        <a href="#lateral-info">DATOS GEOLÓGICOS</a>
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#objetivos">Objetivos de Misión</a>
+        <a href="#sistema">Sistemas de Soporte</a>
+        <a href="#datos">Datos Técnicos</a>
     </nav>
 
     <main class="contenedor-principal">
         
-        <section id="seccion-intro">
+        <section id="inicio">
             <h2>Hacia el Planeta Rojo</h2>
-            
             <article>
-                <p>Marte es un desafío científico sin precedentes. La misión 2026 se centra en establecer los cimientos tecnológicos necesarios para una presencia humana sostenible. El análisis continuo del ambiente nos permite planificar infraestructuras habitables viables.</p>
+                <p>La exploración espacial en 2026 marca un hito histórico sin precedentes. Esta misión internacional no solo busca expandir los horizontes científicos, sino también analizar de manera exhaustiva la viabilidad real de asentamientos autónomos permanentes y recolectar muestras clave de la superficie planetaria para su posterior envío a la Tierra.</p>
                 
-                <h3>Artículo 1: Exploración en la superficie</h3>
-                <p>Nuestros rovers actuales están analizando minuciosamente el suelo en busca de biofirmas antiguas y registros moleculares en el <strong>Cráter Jezero</strong>.</p>
+                <h3>Investigación del Suelo en el Cráter Jezero</h3>
+                <p>Nuestros avanzados robots exploradores se encuentran examinando muestras de regolito profundo en busca de microorganismos fósiles o señales de agua del pasado marciano. El Cráter Jezero fue elegido estratégicamente debido a que, según los datos satelitales, albergó un antiguo lago y el delta de un río hace miles de millones de años, lo que maximiza las posibilidades de encontrar biofirmas.</p>
+                <p>El instrumental a bordo incluye espectrómetros de fluorescencia de rayos X y cámaras de superalta resolución capaces de analizar la composición mineralógica a escala nanométrica.</p>
             </article>
 
-            <article id="objetivos-mision">
-                <h3>Objetivos de la Misión</h3>
+            <article id="objetivos">
+                <h3>Etapas Clave del Proyecto Cronológico</h3>
                 <table class="tabla-datos">
                     <thead>
                         <tr>
-                            <th>Prioridad</th>
-                            <th>Descripción del Objetivo</th>
+                            <th>Fase</th>
+                            <th>Descripción Técnico-Operativa</th>
+                            <th>Estado</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>1</td>
-                            <td>Búsqueda de agua líquida y depósitos de hielo en el subsuelo.</td>
+                            <td>Fase 1</td>
+                            <td>Lanzamiento y trayectoria de transferencia orbital hiperbólica (Inyección Trans-Marte).</td>
+                            <td>Completado</td>
                         </tr>
                         <tr>
-                            <td>2</td>
-                            <td>Generación eficiente de oxígeno respirable con el sistema MOXIE.</td>
+                            <td>Fase 2</td>
+                            <td>Entrada atmosférica, descenso y frenado dinámico mediante escudos térmicos y retrocohetes.</td>
+                            <td>En curso</td>
                         </tr>
                         <tr>
-                            <td>3</td>
-                            <td>Muestreo del regolito marciano para técnicas de manufactura aditiva.</td>
+                            <td>Fase 3</td>
+                            <td>Despliegue del módulo automatizado, recolección activa de muestras y pruebas del sistema MOXIE para generación de O2.</td>
+                            <td>Planificado</td>
+                        </tr>
+                        <tr>
+                            <td>Fase 4</td>
+                            <td>Monitoreo de radiación a largo plazo y pruebas de resistencia de materiales estructurales.</td>
+                            <td>Planificado</td>
+                        </tr>
+                        <tr>
+                            <td>Fase 5</td>
+                            <td>Preparación del vector de ascenso para el retorno del contenedor sellado de muestras.</td>
+                            <td>A largo plazo</td>
                         </tr>
                     </tbody>
                 </table>
             </article>
 
-            <h3>Trayectoria e Itinerario de Vuelo</h3>
-            <p>La planificación de viajes tripulados y robóticos requiere un cálculo milimétrico de las órbitas de transferencia de Hohmann entre la Tierra y el Planeta Rojo:</p>
-            <img src="12.jpg" alt="Esquema de operaciones espaciales" class="img-diagrama">
+            <img src="3.jpg" alt="Módulo explorador en superficie planetaria" class="img-contenido">
 
-            <article id="investigacion-hosting">
-                <h3>Investigación: Infraestructura de Hosting para Proyectos Web</h3>
-                <p>Para la publicación y divulgación global de este sitio web institucional del proyecto espacial, se evaluaron los siguientes entornos de hosting gratuito recomendados en el desarrollo de software:</p>
-                <ul class="lista-hosting">
-                    <li><strong>GitHub Pages:</strong> Excelente para sitios estáticos, con control de versiones integrado directamente con repositorios.</li>
-                    <li><strong>Netlify:</strong> Despliegue automatizado ultrarrápido y soporte nativo para proyectos web modernos.</li>
-                    <li><strong>Vercel:</strong> Optimizado para alta velocidad global y flujos de trabajo basados en HTML5 y hojas de estilos avanzadas.</li>
-                    <li><strong>000webhost / Hostinger Free:</strong> Soporte clásico para bases de datos si se requiere expandir la infraestructura a backend.</li>
-                    <li><strong>InfinityFree:</strong> Hosting gratuito sin publicidad forzada y excelente espacio en disco disponible.</li>
-                </ul>
+            <article id="sistema">
+                <h3>Sistemas de Soporte Vital y Hábitat Tecnológico</h3>
+                <p>Para garantizar la supervivencia en futuras misiones tripuladas, el módulo actual está probando tecnologías de ciclo cerrado. Esto incluye la purificación del agua extraída del subsuelo helado mediante sistemas de destilación por compresión de vapor y la estabilización de la presión interna dentro de domos inflables experimentales construidos con polímeros reforzados de alta densidad.</p>
             </article>
-
-            <img src="3.jpg" alt="Astronauta en el relieve marciano" class="img-animada">
         </section>
 
-        <aside id="lateral-info">
-            <h3>Geología Marciana</h3>
-            <p>Marte posee accidentes geográficos asombrosos, incluyendo el volcán más grande descubierto en el sistema solar: el colosal Monte Olimpo.</p>
+        <aside id="datos">
+            <h3>Ficha Geológica y Ambiental</h3>
+            <p>Marte alberga formaciones masivas únicas, tales como el Monte Olimpo, el volcán en escudo más grande de todo el sistema solar conocido, el cual se eleva a más de 21 kilómetros sobre el nivel medio de la superficie.</p>
+            <hr style="border-color: rgba(230, 126, 34, 0.3);">
             
-            <hr>
-            
-            <h4>Datos de Interés</h4>
-            <p><b>Atmósfera:</b> 95% Dióxido de Carbono (CO2).</p>
-            <p><b>Gravedad:</b> 38% respecto a la gravedad terrestre.</p>
-            <p><b>Distancia Media:</b> 225 millones de kilómetros.</p>
-            
-            <img src="4.jpg" alt="Fotografía orbital de Marte" class="img-lateral">
+            <h4>Datos Atmosféricos y Físicos:</h4>
+            <ul>
+                <li><strong>Atmósfera:</strong> 95% Dióxido de Carbono, 2.8% Nitrógeno, 2% Argón.</li>
+                <li><strong>Presión Superficial:</strong> Menos del 1% de la Tierra (6.1 mbar).</li>
+                <li><strong>Gravedad:</strong> 38% respecto a la gravedad terrestre ($3.72 \text{ m/s}^2$).</li>
+                <li><strong>Temperaturas:</strong> 
+                    <ul class="sub-lista">
+                        <li>Máxima: 20 °C (en el ecuador)</li>
+                        <li>Mínima: -153 °C (en los polos)</li>
+                    </ul>
+                </li>
+                <li><strong>Distancia Media:</strong> 225 millones de kilómetros desde la Tierra.</li>
+            </ul>
+            <img src="4.jpg" alt="Detalle del relieve de Marte" class="img-contenido">
         </aside>
-        
+
     </main>
 
-    <footer id="pie-mision">
-        <p><b>Estudiante:</b> Emili Vargas Garcia | <b>Grupo:</b> 602</p>
-        <p>Proyecto realizado para el Módulo IV - MiCOBAQ Virtual </p>
-        <p><i>&copy; 2026 - Diseño de Interfases Web</i></p>
+    <footer>
+        <p><strong>Estudiante:</strong> Emili Vargas Garcia | <strong>Grupo:</strong> 602</p>
+        <p>Módulo IV: Diseña Interfases Web - Proyecto Semestral Tercer Bloque</p>
+        <p><em>&copy; 2026 Colegio de Bachilleres del Estado de Querétaro. Todos los derechos reservados.</em></p>
     </footer>
 
 </body>
