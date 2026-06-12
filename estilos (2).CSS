@@ -1,38 +1,42 @@
 * {
-    box-sizing: border-box;
+    box-sizing: border-box; /* Modelo de caja requerido */
 }
 
 body {
     margin: 0;
     padding: 0;
-    color: #ffffff;
-    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #ffffff; /* Propiedades de color */
+    font-family: 'Segoe UI', Arial, sans-serif; /* Propiedades de texto */
     background-color: #0d0d0d;
     line-height: 1.6;
 }
 
+/* 1) Imagen de fondo para el Header */
 header {
     background-image: url('8.jpg');
     background-size: cover;
     background-position: center;
-    padding: 60px 20px;
+    padding: 80px 20px; /* Unidades de medida y modelo de caja */
     text-align: center;
     border-bottom: 5px solid #e67e22;
 }
 
 header h1 {
-    font-size: 3rem;
+    font-size: 3.5rem; /* Unidades relativas rem */
     color: #ffffff;
-    text-shadow: 2px 2px 4px #000000;
+    text-shadow: 3px 3px 6px #000000;
     margin: 0;
 }
 
 header .lema {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: #f1c40f;
     font-style: italic;
+    margin-top: 10px;
+    text-shadow: 1px 1px 3px #000000;
 }
 
+/* 2) Imagen de fondo para el Nav */
 nav {
     background-image: url('10.jpg');
     background-size: cover;
@@ -40,6 +44,9 @@ nav {
     padding: 15px;
     text-align: center;
     border-bottom: 2px solid #222;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 nav a {
@@ -47,10 +54,16 @@ nav a {
     text-decoration: none;
     font-weight: bold;
     padding: 8px 20px;
-    margin: 0 10px;
-    background-color: rgba(0, 0, 0, 0.5);
+    margin: 5px 10px;
+    background-color: rgba(0, 0, 0, 0.6); /* Fondos con transparencia */
     border-radius: 4px;
     display: inline-block;
+    transition: background 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #e67e22;
+    color: #000;
 }
 
 .contenedor-principal {
@@ -61,6 +74,7 @@ nav a {
     gap: 20px;
 }
 
+/* 3) Imagen de fondo para el Section */
 section {
     background-image: url('11.jpg');
     background-size: cover;
@@ -68,17 +82,25 @@ section {
     flex: 2;
     padding: 30px;
     border-radius: 8px;
-    background-color: rgba(20, 20, 20, 0.85);
-    background-blend-mode: overlay;
+    background-color: rgba(20, 20, 20, 0.88);
+    background-blend-mode: overlay; /* Combinación para legibilidad del texto */
 }
 
 section h2 {
     color: #e67e22;
-    font-size: 2rem;
-    border-bottom: 1px solid #e67e22;
+    font-size: 2.2rem;
+    border-bottom: 2px solid #e67e22;
     padding-bottom: 10px;
+    margin-top: 0;
 }
 
+section h3 {
+    color: #f1c40f;
+    font-size: 1.5rem;
+    margin-top: 25px;
+}
+
+/* 4) Imagen de fondo para el Aside */
 aside {
     background-image: url('7.jpg');
     background-size: cover;
@@ -86,15 +108,25 @@ aside {
     flex: 1;
     padding: 30px;
     border-radius: 8px;
-    background-color: rgba(35, 25, 20, 0.9);
+    background-color: rgba(35, 25, 20, 0.92);
     background-blend-mode: overlay;
+    height: fit-content;
 }
 
 aside h3 {
     color: #e67e22;
     margin-top: 0;
+    font-size: 1.6rem;
+    border-bottom: 1px solid rgba(230, 126, 34, 0.5);
+    padding-bottom: 5px;
 }
 
+aside h4 {
+    color: #f1c40f;
+    margin-bottom: 5px;
+}
+
+/* 5) Imagen de fondo para el Footer */
 footer {
     background-image: url('5.jpg');
     background-size: cover;
@@ -103,19 +135,20 @@ footer {
     text-align: center;
     margin-top: 40px;
     border-top: 4px solid #e67e22;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.85);
     background-blend-mode: overlay;
 }
 
+/* Formatos de estilo de Tablas */
 .tabla-datos {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .tabla-datos th, .tabla-datos td {
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 12px;
     text-align: left;
 }
@@ -129,15 +162,23 @@ footer {
     background-color: rgba(255, 255, 255, 0.05);
 }
 
+/* Formatos de estilo de Imágenes embebidas */
 .img-contenido {
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
     height: auto;
     border-radius: 6px;
-    margin: 15px 0;
+    margin: 20px auto;
     display: block;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.sub-lista {
+    padding-left: 20px;
+    margin: 5px 0;
+}
+
+/* Adaptación responsive */
 @media (max-width: 768px) {
     .contenedor-principal {
         flex-direction: column;
